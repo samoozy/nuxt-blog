@@ -3,32 +3,18 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview 
-        id="1"
-        title="Title1"
-        previewText="loremipsum1"
-      />
-      <PostPreview 
-        id="2"
-        title="Title2"
-        previewText="loremipsum2"
-      />
-      <PostPreview 
-        id="3"
-        title="Title3"
-        previewText="loremipsum3"
-      />
-    </section>
+
+    <PostList />
+    
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import PostList from '@/components/Posts/PostList'
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 }
 </script>
@@ -57,15 +43,6 @@ export default {
   box-shadow: 3px 3px 3px black;
   box-sizing: border-box;
   border: 1px solid black;
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (min-width: 768px) {
