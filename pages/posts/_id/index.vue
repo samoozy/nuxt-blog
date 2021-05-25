@@ -1,18 +1,37 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of the post</h1>
+      <h1 class="post-title">{{ loadedPost.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on XXX</div>
-        <div class="post-detail">Written by NAME</div>
+        <div class="post-detail">Last updated on {{ loadedPost.updatedDate }}</div>
+        <div class="post-detail">Written by {{ loadedPost.author }}</div>
       </div>
-      <p class="post-content">Content of the post</p>
+      <p class="post-content">{{ loadedPost.content }}</p>
     </section>
     <section class="post-feedback">
       <p>Let me know what you think about the post, send a mail to <a href="mailto:test@test.com">test@test.com</a></p>
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: '1', 
+          title: `Hello World! (ID: ${context.params.id})`,
+          author: 'Test Test',
+          previewText: 'This is our first Lorem Ipsum Test',
+          updatedDate: new Date(),
+          content: 'This is our first Lorem Ipsum Test This is our first Lorem Ipsum Test This is our first Lorem Ipsum Test This is our first Lorem Ipsum Test'
+        },
+      })
+    }, 1000)
+  }
+}
+</script>
 
 <style scoped>
 .single-post-page {
