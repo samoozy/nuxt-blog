@@ -32,7 +32,7 @@ const createStore = () => {
 
             resolve()
           }, 1500)
-          
+
         })
       },
       setPosts(context, payload) {
